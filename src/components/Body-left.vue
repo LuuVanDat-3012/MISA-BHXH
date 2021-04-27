@@ -103,6 +103,10 @@ export default {
                     background-image: url('../content/icon/report.png');
                 }
 
+                .body-left .menu .menu-item .icon.buy {
+                    background-image: url('../content/icon/dashboard.png');
+                }
+
             .body-left .menu .menu-item .item-name {
                 width: 150px;
             }
@@ -131,5 +135,5 @@ export default {
         bottom: 0;
         left: 0;
     }
-
+    
 </style>

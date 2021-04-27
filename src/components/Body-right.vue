@@ -1,6 +1,6 @@
 <template >
      <div>
-        gfgf
+        <MSHeader></MSHeader>
      </div>
 </template>
 
@@ -9,7 +9,7 @@ import MSHeader from "./ComponentChild/MSHeader.vue"
 export default {
    name: "body-right",
    components: {
-       MSHeader
+      MSHeader 
    }
 }
 </script>

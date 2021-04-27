@@ -1,25 +1,44 @@
 <template >
     <div class="container">
-        <div class="cbbListRes">
-            <form action="">
-                <select name="car" id="car">
-                    <option value="Nhà hàng 1"></option>
-                    <option value="Nhà hàng 2"></option>
-                    <option value="Nhà hàng 3"></option>
-                </select>
-            </form>
-        </div>
-        <div class="icon user"></div>
-    </div>
 
+          <div class="listRes">
+              
+          </div>
+
+          <div class="user">
+                <div class="icon user">
+
+                </div>
+                <div class="username">
+
+                </div>
+          </div>
+    
+    </div>
 </template>
 
 <script>
 export default {
-   name: "MSHeader"
+   name: "MSHeader",
+      data () {
+        return {
+            select: ['Vuetify', 'Programming'],
+            items: [
+            'Programming',
+            'Design',
+            'Vue',
+            'Vuetify',
+            ]
+        }
+    }
 }
 </script>
 
 <style>
+.container{
+    position: absolute;
+    left: 201px;
+}
+
 
 </style>
