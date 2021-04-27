@@ -1,27 +1,24 @@
 <template>
   <div id="app">
-  
+     <BodyLeft></BodyLeft>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BodyLeft from "./components/Body-left.vue"
 export default {
   name: 'App',
   components: {
-   
+   BodyLeft
+  },
+  data(){
+    return{
+      name : "luu van dat"
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
