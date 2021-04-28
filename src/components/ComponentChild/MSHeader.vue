@@ -9,10 +9,10 @@
 
           <div class="user">
                 <div class="icon user">
-                    image
+                   
                 </div>
                 <div class="username">
-                    name
+                    Nguyễn Văn Đông
                 </div>
           </div>
     
@@ -28,11 +28,42 @@ export default {
    },
       data () {
         return {
-           listRes:['Nha hang ha Noi 1', ' Nha hang Ha Noi 2', 'Nha hang Ha Noi 3']
+           listRes:['Nhà hàng Hà Nội 1', ' Nhà hàng Hà Nội 2', 'Nhà hàng Hà Nội 3'],
+           user:{
+               image: "../../content/icon/avatar-default.png",
+               username : "Nguyễn Văn Đông"
+           }
         }
     }
 }
 </script>
 
 <style>
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.listRes{
+    padding: 10px;
+}
+.container .user{
+    display: flex;
+    flex-direction: row;
+}
+.container .user .icon{
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    width: 50px;
+    height: 40px;
+    background-size: 25px;
+}
+.container .user .icon.user{
+    background-image: url('../../content/icon/avatar-default.png');
+}
+.container .user .username{
+    padding: 12px;
+}
+
 </style>

@@ -32,4 +32,26 @@ export default {
   display: flex;
   flex-direction: row;
 }
+.main-container {
+    font-family: MISA-Regular, MISA-Bold, MISA-Italic;
+    font-size: 15 px;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: 'MISA-Regular';
+    src: url('/content/font/GoogleSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MISA-Bold';
+    src: url('/content/font/GoogleSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MISA-Italic';
+    src: url('/content/font/GoogleSans-Italic.otf') format('opentype');
+}
 </style>
