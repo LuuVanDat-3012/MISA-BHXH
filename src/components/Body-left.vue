@@ -27,13 +27,11 @@
 export default {
    name : "body-left",
    props:{
-       name :{
+       val :{
            type: String,
            default : null
        }
-   }
-
-   
+   } 
 }
 </script>
 
@@ -42,7 +40,7 @@ export default {
     background-color: #ffffff;
     width: 200px;
     height: 100%;
-    border-right: 1px solid #bbbbbb;
+    
     display: flex;
     flex-direction: column;
 }
@@ -110,30 +108,4 @@ export default {
             .body-left .menu .menu-item .item-name {
                 width: 150px;
             }
-
-.body-right {
-    position: absolute;
-    left: 201px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: bisque;
-}
-
-    .body-right .header {
-        background-color: antiquewhite;
-        width: 100%;
-        height: 50px;
-        border-bottom: 1px solid #bbbbbb;
-    }
-
-    .body-right .content {
-        background-color: #E9EBEE;
-        position: absolute;
-        top: 51px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-    }
-    
 </style>

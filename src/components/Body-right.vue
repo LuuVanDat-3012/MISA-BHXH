@@ -1,5 +1,5 @@
 <template >
-     <div>
+     <div class="container-content">
         <MSHeader></MSHeader>
      </div>
 </template>
@@ -15,5 +15,13 @@ export default {
 </script>
 
 <style>
-
+.container-content{
+   position: absolute;
+   left: 202px;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   border-left: 1px solid black ;
+   height: 100%;
+}
 </style>

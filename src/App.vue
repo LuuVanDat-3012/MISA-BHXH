@@ -1,7 +1,8 @@
 <template>
-   <div>
+   <div class="main-container">
        <BodyLeft></BodyLeft>
        <BodyRight></BodyRight>
+ 
    </div>
 </template>
 
@@ -10,11 +11,9 @@
 import BodyLeft  from './components/Body-left.vue';
 import BodyRight  from './components/Body-right.vue';
 export default {
-  components: { BodyLeft },
+  components: { BodyLeft, BodyRight },
   name: 'App',
-  computed:{
-    BodyLeft, BodyRight
-  },
+ 
   data () {
       return {
         select: ['Vuetify', 'Programming'],
@@ -28,3 +27,9 @@ export default {
     },
 };
 </script>
+<style scoped>
+.main-container{
+  display: flex;
+  flex-direction: row;
+}
+</style>
