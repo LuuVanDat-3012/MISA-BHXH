@@ -31,7 +31,9 @@
                      <option value="" v-for="position in listPosition" :key="position">{{position}}</option>
                  </select>
              </div>
-
+             <div class="refresh-table">
+                
+             </div>
         </div>
 
     </div>
@@ -179,6 +181,15 @@ export default {
              border: 0;
          }
 
+
+    .main-content .content-input .refresh-table  {
+        height: 43px;
+        width: 43px;
+        box-sizing: border-box;
+        background-image: url('../../content/icon/refresh.png');
+                    background-repeat: no-repeat;
+                    background-position: center; 
+    }
         
             
 </style>

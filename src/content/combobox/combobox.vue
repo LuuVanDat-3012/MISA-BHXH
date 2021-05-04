@@ -1,7 +1,7 @@
 <template >
      <div class="container-cbb">
          <select name="" id="">
-             <option value="" v-for="res in listRes" :key="res">{{res</option>
+             <option value="" v-for="res in listRes" :key="res">{{res}}</option>
          </select>
      </div>
 </template>
