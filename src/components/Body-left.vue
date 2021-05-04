@@ -18,6 +18,14 @@
                 <div class="icon buy"></div>
                 <div>Mua hàng</div>
             </div>
+            <div class="menu-item">
+                <div class="icon list-employee"></div>
+                <div>Danh mục nhân viên</div>
+            </div>
+               <div class="menu-item">
+                <div class="icon setting"></div>
+                <div>Thiết lập hệ thống</div>
+            </div>
        </div>
       
    </div>
@@ -104,6 +112,13 @@ export default {
                 .body-left .menu .menu-item .icon.buy {
                     background-image: url('../content/icon/dashboard.png');
                 }
+                .body-left .menu .menu-item .icon.list-employee {
+                    background-image: url('../content/icon/dic-employee.png');
+                }
+                 .body-left .menu .menu-item .icon.setting{
+                    background-image: url('../content/icon/setting.png');
+                }
+
 
             .body-left .menu .menu-item .item-name {
                 width: 150px;

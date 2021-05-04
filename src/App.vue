@@ -34,7 +34,7 @@ export default {
 }
 .main-container {
     font-family: MISA-Regular, MISA-Bold, MISA-Italic;
-    font-size: 15 px;
+    font-size: 14 px;
     margin: 0px;
     padding: 0px;
     height: 100vh;

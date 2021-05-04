@@ -47,6 +47,8 @@ export default {
 }
 .listRes{
     padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
 }
 .container .user{
     display: flex;
