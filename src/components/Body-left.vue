@@ -46,7 +46,7 @@ export default {
 <style scope>
    .body-left {
     background-color: #ffffff;
-    width: 200px;
+    width: 230px;
     height: 100%;
     
     display: flex;

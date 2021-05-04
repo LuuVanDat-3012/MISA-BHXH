@@ -8,7 +8,7 @@
           </div>
 
           <div class="user">
-                <div class="icon user">
+                <div class="icon icon-user">
                    
                 </div>
                 <div class="username">
@@ -41,27 +41,35 @@ export default {
 <style>
 .container{
     display: flex;
-    flex-direction: row;
+  
     justify-content: space-between;
     border-bottom: 1px solid black;
 }
 .listRes{
     padding: 10px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+    border: 0;
+    width: 150px;
+}
+.listRes select{
+    border: 0;
+      width: 150px;
 }
 .container .user{
     display: flex;
     flex-direction: row;
+    position: absolute;
+    right: 16px;
 }
 .container .user .icon{
     background-repeat: no-repeat;
-    background-position: 18px center;
+    background-position: 25px center;
     width: 50px;
     height: 40px;
     background-size: 25px;
 }
-.container .user .icon.user{
+.container .user .icon.icon-user{
     background-image: url('../../content/icon/avatar-default.png');
 }
 .container .user .username{

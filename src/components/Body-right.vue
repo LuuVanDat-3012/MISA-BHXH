@@ -20,11 +20,12 @@ export default {
 <style>
 .container-content{
    position: absolute;
-   left: 202px;
+   left: 232px;
    top: 0;
    right: 0;
    bottom: 0;
    border-left: 5px solid #8a8989 ;
    height: 100%;
+   width: calc(100% - 260px);
 }
 </style>

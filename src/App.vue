@@ -14,17 +14,6 @@ export default {
   components: { BodyLeft, BodyRight },
   name: 'App',
  
-  data () {
-      return {
-        select: ['Vuetify', 'Programming'],
-        items: [
-          'Programming',
-          'Design',
-          'Vue',
-          'Vuetify',
-        ],
-      }
-    },
 };
 </script>
 <style scoped>
@@ -42,16 +31,16 @@ export default {
 
 @font-face {
     font-family: 'MISA-Regular';
-    src: url('/content/font/GoogleSans-Regular.otf') format('opentype');
+    src: url('./content/font/GoogleSans-Regular.otf') ;
 }
 
 @font-face {
     font-family: 'MISA-Bold';
-    src: url('/content/font/GoogleSans-Bold.otf') format('opentype');
+    src: url('./content/font/GoogleSans-Bold.otf') ;
 }
 
 @font-face {
     font-family: 'MISA-Italic';
-    src: url('/content/font/GoogleSans-Italic.otf') format('opentype');
+    src: url('./content/font/GoogleSans-Italic.otf');
 }
 </style>
