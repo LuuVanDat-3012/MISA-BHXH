@@ -1,7 +1,7 @@
 <template >
      <div class="container-cbb">
          <select name="" id="">
-             <option value="" v-for="res in listRes" :key="res">{{res}}</option>
+             <option value="" v-for="item in list" :key="item">{{item}}</option>
          </select>
      </div>
 </template>
@@ -14,7 +14,7 @@ export default {
          }
      },
      props:{
-         listRes : Array    
+         list : Array    
      }
 }
 </script>
@@ -25,12 +25,20 @@ export default {
         border: 1px solid #d2d2d2;
         border-radius: 3px;
         margin-left: 20px;
-    }     
+    } 
+ .container-cbb:hover{
+      border: 1px solid #2FBEBE;
+ }  
+ .container-cbb:focus{
+      border: 1px solid #2FBEBE;
+ }      
          .container-cbb select{
              box-sizing: border-box;
              height: 43px;
              width: 200px;
              border: 0;
          }
-
+option{
+    border: 0;
+}
 </style>

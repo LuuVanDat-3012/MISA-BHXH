@@ -1,13 +1,11 @@
 <template >
     <div class="container">
-
-          <!-- <div class="listRes">
+          <div class="listRes">
                  <select name="" id="">
                      <option value="" v-for="res in listRes" :key="res"> {{res}}</option>
                  </select>
-          </div> -->
-          <MSCombobox></MSCombobox>
-
+          </div>
+         
           <div class="user">
                 <div class="icon icon-user">
                    
@@ -21,11 +19,11 @@
 </template>
 
 <script>
-import MSCombobox from '../../content/combobox/combobox.vue'
+
 export default {
    name: "MSHeader",
    components:{
-    MSCombobox
+  
    },
       data () {
         return {
@@ -42,26 +40,28 @@ export default {
 <style>
 .container{
     display: flex;
-  
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #d2d2d2;
+    height: 48px;
 }
 .listRes{
-    padding: 10px;
+    padding: 15px;
     font-weight: bold;
     font-size: 18px;
     border: 0;
     width: 150px;
+    
 }
 .listRes select{
     border: 0;
-      width: 150px;
+    width: 150px;
 }
 .container .user{
     display: flex;
     flex-direction: row;
     position: absolute;
     right: 16px;
+   
 }
 .container .user .icon{
     background-repeat: no-repeat;

@@ -46,15 +46,14 @@ export default {
 <style scope>
    .body-left {
     background-color: #ffffff;
-    width: 230px;
+    width: 226px;
     height: 100%;
-    
     display: flex;
     flex-direction: column;
 }
 
     .body-left .sidebar {
-        height: 50px;
+        height: 48px;
         display: flex;
     }
 
@@ -69,10 +68,10 @@ export default {
         }
 
         .body-left .sidebar .logo {
-            width: 138px;
+            width: 140px;
             height: 50px;
             background-image: url('../content/image/cukcuk-logo.png');
-            background-size: 126px;
+            background-size: 130px;
             background-repeat: no-repeat;
             background-position: 0px 9px;
             cursor: pointer;
@@ -87,6 +86,7 @@ export default {
             display: flex;
             align-items: center;
             cursor: pointer;
+            height: 50px;
         }
 
             .body-left .menu .menu-item:hover {

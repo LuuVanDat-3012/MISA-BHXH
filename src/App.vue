@@ -16,14 +16,18 @@ export default {
  
 };
 </script>
-<style scoped>
+<style >
+*{
+    margin: 0;
+    padding: 0;
+}
 .main-container{
   display: flex;
   flex-direction: row;
 }
 .main-container {
     font-family: MISA-Regular, MISA-Bold, MISA-Italic;
-    font-size: 14 px;
+    font-size: 13px;
     margin: 0px;
     padding: 0px;
     height: 100vh;

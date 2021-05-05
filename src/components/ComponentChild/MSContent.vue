@@ -5,13 +5,9 @@
                     <h2>Danh sách khách hàng</h2>
               </div>
               <div class="content-header-button">
-                    <button class="btnInsert" @click="sayHi()">
-                        <div class="btnInsert-icon">
-
-                        </div>
-                        <div class="btnInsert-text">
-                            Thêm khách hàng
-                        </div>         
+                    <button class="btnInsert" >
+                        <img src="../../content/icon/add.png" alt="" width="20px" height="20px">
+                        Thêm khách hàng
                     </button>
               </div>
         </div>
@@ -21,26 +17,25 @@
                     <button class="btnSearch"> </button>
                     <input type="text" class="search-box" placeholder="Tìm kiếm theo tên, email... ">
              </div>
-             <div class="input-department">
-                 <select name="" id="">
-                     <option value="" v-for="department in listDepartment" :key="department">{{department}}</option>
-                 </select>
-             </div>
-             <div class="input-position">
-                      <select name="" id="">
-                     <option value="" v-for="position in listPosition" :key="position">{{position}}</option>
-                 </select>
-             </div>
-             <div class="refresh-table">
-                
-             </div>
+            
+             <MSCombobox v-bind:list = this.listDepartment></MSCombobox>
+             <MSCombobox v-bind:list = this.listPosition>  </MSCombobox>
+             <div class="refresh-table"> </div> 
         </div>
+        <EmployeeTable v-bind:listEmployee = this.listEmployee></EmployeeTable>
+
 
     </div>
 </template>
 <script>
+import MSCombobox from '../../content/combobox/combobox.vue'
+import EmployeeTable from  '../../content/table/EmployeeTable.vue'
 export default {
     name: "mscontent",
+    components:{
+        MSCombobox,
+        EmployeeTable
+    },
     methods:{
         sayHi(){
             alert("Hello");
@@ -53,7 +48,704 @@ export default {
              ],
              listPosition:[
                  'Tất cả chức vụ', 'Nhân viên kế toán', 'Nhân viên kinh đoanh', 'Bảo vệ'
-             ]    
+             ], 
+             listEmployee:[
+                 {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 } ,
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },   
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 }, {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 },
+                  {
+                     'code': 123,
+                     'name': 'Lưu Văn Đạt',
+                     'sex': 'Nam',
+                     'birthday':'20/12/2000',
+                     'phone':'0395837186',
+                     'email':'luuvandat@gmail.com',
+                     'position':'Fresger Web',
+                     'department':'Phòng đào tạo',
+                     'salary':10000000,
+                     'jobStatus': 'Học việc'
+                 }
+             ]   
         }
           
     }
@@ -61,14 +753,16 @@ export default {
 </script>
 <style scoped>
 .main-content .content-header{
-    height: 45px;
+    height: 48px;
     width: 100%;
     display: flex;
+    box-sizing: border-box;
     padding: 10px;
  }
     .main-content .content-header .content-header-text{
        position: absolute;
-      top: 38px;
+       justify-content: center;
+       align-items: center;
     }
     .main-content .content-header .content-header-button{
         position: absolute;
@@ -79,38 +773,51 @@ export default {
         .btnInsert{
             background-color: #019160;
             height: 40px;
-            line-height: 40px;
             color: #fff;
             border-radius: 4px;
             border : 0;
-            width: 180px;
-            align-items: -18px center;
+            padding: 0 16px;
+            align-content: center;
             display: flex;
+            line-height: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        .btnInsert img{
+            padding-right: 6px;
         }
         .btnInsert:hover {
             background-color: #2FBEBE;
             cursor: pointer;
         }
 
-            .btnInsert-icon{
-                 width: 30px;
+            /* .btnInsert-icon{
+                 width: 35px;
                  height: 40px;
                  background-image: url('../../content/icon/add.png');
                  background-repeat: no-repeat;
-                 background-position: 10px 9px;
-                 position: absolute;
+                 background-position: center;
+                 padding-left: 16px;
                 
         }
             .btnInsert-text{
-                position: absolute;
-                right: 24px;
-            }
+               padding-right: 16px;
+            } */
 
 .main-content .content-input{
-    height: 50px;
+    height: 43px;
     width: 100%;
     display: flex;
     background-color: transparent;
+    box-sizing: border-box;
+    padding-top: 4px;
+    padding-bottom: 10px;
+}
+.main-content .content-input .input-search:focus{
+    border: 1px solid #2FBEBE;
+}
+.main-content .content-input .input-search:hover{
+    border: 1px solid #2FBEBE;
 }
     .main-content .content-input .input-search{
         width: 320px;
@@ -187,9 +894,19 @@ export default {
         width: 43px;
         box-sizing: border-box;
         background-image: url('../../content/icon/refresh.png');
-                    background-repeat: no-repeat;
-                    background-position: center; 
+        background-repeat: no-repeat;
+        background-position: center; 
+        position: absolute;
+        right: 14px;
+        border: 1px solid #d2d2d2;   
+        border-radius: 2px; 
+        cursor: pointer;
     }
+    .main-content .content-input .refresh-table:hover{
+        background-color: #2FBEBE;
+        border: 0;
+    }
+ 
         
             
 </style>
