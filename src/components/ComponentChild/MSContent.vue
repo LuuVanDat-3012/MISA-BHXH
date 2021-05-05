@@ -23,6 +23,7 @@
              <div class="refresh-table"> </div> 
         </div>
         <EmployeeTable v-bind:listEmployee = this.listEmployee></EmployeeTable>
+        <MSNavigation></MSNavigation>
 
 
     </div>
@@ -30,11 +31,13 @@
 <script>
 import MSCombobox from '../../content/combobox/combobox.vue'
 import EmployeeTable from  '../../content/table/EmployeeTable.vue'
+import MSNavigation from '../../content/navigation/navigation.vue'
 export default {
     name: "mscontent",
     components:{
         MSCombobox,
-        EmployeeTable
+        EmployeeTable,
+        MSNavigation
     },
     methods:{
         sayHi(){
