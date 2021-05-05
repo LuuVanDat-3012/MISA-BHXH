@@ -50,6 +50,7 @@ export default {
     font-size: 18px;
     border: 0;
     width: 150px;
+    vertical-align: middle;
     
 }
 .listRes select{
@@ -69,9 +70,11 @@ export default {
     width: 50px;
     height: 40px;
     background-size: 25px;
+    vertical-align: middle;
 }
 .container .user .icon.icon-user{
     background-image: url('../../content/icon/avatar-default.png');
+    vertical-align: middle;
 }
 .container .user .username{
     padding: 12px;

@@ -51,7 +51,7 @@ export default {
  .container-table{
      width: 100%;
      position: relative;
-     height: 700px;
+     height: 690px;
      overflow-y: auto;
      margin-top: 10px;
  }
@@ -74,7 +74,7 @@ export default {
     }
     tr{
         text-align: center;
-        height: 48px;
+        height: 40px;
     }
     tr:hover td{
         background-color: #6ccea8;
@@ -86,7 +86,6 @@ export default {
     }
     th, td {
         border-bottom: 1px solid #ddd;
-        padding: 18px 16px;
 
     }
 
