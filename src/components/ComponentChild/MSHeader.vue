@@ -13,6 +13,9 @@
                 <div class="username">
                     Nguyễn Văn Đông
                 </div>
+                <div class="moreInfo">
+
+                </div>
           </div>
     
     </div>
@@ -45,7 +48,7 @@ export default {
     height: 48px;
 }
 .listRes{
-    padding: 15px;
+    padding: 12px;
     font-weight: bold;
     font-size: 18px;
     border: 0;
@@ -66,7 +69,7 @@ export default {
 }
 .container .user .icon{
     background-repeat: no-repeat;
-    background-position: 25px center;
+    background-position: 20px 12px;
     width: 50px;
     height: 40px;
     background-size: 25px;
@@ -77,7 +80,19 @@ export default {
     vertical-align: middle;
 }
 .container .user .username{
-    padding: 12px;
+    padding: 0px 12px;
+    text-align: center;
+    vertical-align: bottom;
+    margin-top: 15px;
+}
+.container .user .moreInfo{
+    background-image: url('../../content/icon/option.png');
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: 0px 12px;
+    padding: 12px 0px;
 }
 
 </style>
