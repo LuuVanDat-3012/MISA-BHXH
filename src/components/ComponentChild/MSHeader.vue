@@ -45,7 +45,7 @@ export default {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #d2d2d2;
-    height: 48px;
+    height: 60px;
 }
 .listRes{
     padding: 12px;

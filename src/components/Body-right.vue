@@ -24,7 +24,6 @@ export default {
    right: 0;
    bottom: 0;
    border-left: 1px solid #8a8989 ;
-   height: 100vh;
    width: calc(100% - 226px);
 }
 </style>

@@ -1,33 +1,35 @@
 <template>
    <div class="body-left">
        <div class="sidebar">
-           <div class="toggle"></div>
-           <div class="logo"></div>
+           <div class="box-logo">
+                 <div class="toggle"></div>
+                 <div class="logo"></div>
+           </div>
        </div>
 
        <div class="menu">
             <div class="menu-item">
                 <div class="icon overview"></div>
-                <div>Tổng quan</div>
+                <div class="menu-item-text">Tổng quan</div>
             </div>
              <div class="menu-item">
                 <div class="icon report"></div>
-                <div>Báo cáo</div>
+                <div class="menu-item-text">Báo cáo</div>
             </div>
              <div class="menu-item">
                 <div class="icon buy"></div>
-                <div>Mua hàng</div>
+                <div class="menu-item-text">Mua hàng</div>
             </div>
             <div class="menu-item">
                 <div class="icon list-employee"></div>
-                <div>Danh mục nhân viên</div>
+                <div class="menu-item-text">Danh mục nhân viên</div>
             </div>
                <div class="menu-item">
                 <div class="icon setting"></div>
-                <div>Thiết lập hệ thống</div>
+                <div class="menu-item-text">Thiết lập hệ thống</div>
             </div>
-       </div>
-      
+       </div>  
+       
    </div>
     
 </template>
@@ -53,29 +55,38 @@ export default {
 }
 
     .body-left .sidebar {
-        height: 48px;
+        height: 60px;
         display: flex;
+        width: 226px;
+        
     }
-
-        .body-left .sidebar .toggle {
-            width: 50px;
-            height: 50px;
-            background-image: url('../content/image/toggle.png');
-            background-repeat: no-repeat;
-            background-size: 22px;
-            background-position: 18px center;
-            cursor: pointer;
+        .body-left .sidebar .box-logo{
+            width: 202px;
+            height: 24px;
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            display: flex;
         }
 
-        .body-left .sidebar .logo {
-            width: 140px;
-            height: 50px;
-            background-image: url('../content/image/cukcuk-logo.png');
-            background-size: 130px;
-            background-repeat: no-repeat;
-            background-position: 0px 9px;
-            cursor: pointer;
-        }
+            .body-left .sidebar .box-logo .toggle {
+                width: 24px;
+                height: 24px;
+                background-image: url('../content/image/toggle.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                cursor: pointer;
+            }
+
+            .body-left .sidebar .box-logo .logo {
+                flex: 1;
+                height:24px;
+                background-image: url('../content/image/cukcuk-logo.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                margin-left: 16px;
+            }
 
     .body-left .menu {
         position: relative;
@@ -86,19 +97,23 @@ export default {
             display: flex;
             align-items: center;
             cursor: pointer;
-            height: 50px;
+            height: 44px;
+            padding-left: 24px;
         }
 
+            .body-left .menu .menu-item .menu-item-text{
+                margin-left: 16px;
+            }
             .body-left .menu .menu-item:hover {
                 background-color: #E9EBEE;
             }
 
             .body-left .menu .menu-item .icon {
-                width: 50px;
-                height: 45px;
+                width: 20px;
+                height: 20px;
                 background-repeat: no-repeat;
-                background-size: 22px;
-                background-position: 18px center;
+                background-size: contain;
+                background-position: center;
             }
 
                 .body-left .menu .menu-item .icon.overview {
