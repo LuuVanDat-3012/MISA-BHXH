@@ -1,7 +1,7 @@
 <template >
      <div class="container-content">
         <MSHeader></MSHeader>
-        <MSContent></MSContent>
+        <MSContent ></MSContent>
      </div>
 </template>
 
@@ -13,6 +13,10 @@ export default {
    components: {
       MSHeader ,
       MSContent
+   },
+   methods:{
+    
+      
    }
 }
 </script>

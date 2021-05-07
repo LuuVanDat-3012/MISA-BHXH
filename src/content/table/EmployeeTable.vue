@@ -66,8 +66,6 @@ export default {
  table{
      width: 100%;
      border-spacing: 0;
-     padding: 0px 10px;
-     
  }
     tr:nth-child(even){
         background-color: #FAFAFA;
@@ -86,7 +84,6 @@ export default {
     }
     th, td {
         border-bottom: 1px solid #ddd;
-
     }
 
  

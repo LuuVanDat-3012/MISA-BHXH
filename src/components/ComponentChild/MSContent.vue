@@ -4,21 +4,14 @@
       <div class="content-header-text">
         <h2>Danh sách khách hàng</h2>
       </div>
-      <div class="content-header-button">
-        <button class="btnInsert">
+      <div class="content-header-button" @click="clickToShowDialog()">
+        <button class="btnInsert" >
           <img
             src="../../content/icon/add.png"
             alt=""
             width="20px"
             height="20px"
           />
-          <table>
-              <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-              </tr>
-          </table>
           Thêm khách hàng
         </button>
       </div>
@@ -44,26 +37,29 @@
     </div>
     <EmployeeTable v-bind:listEmployee="this.listEmployee"></EmployeeTable>
     <MSNavigation></MSNavigation>
+    
   </div>
 </template>
 <script>
 import MSCombobox from "../../content/combobox/combobox.vue";
 import EmployeeTable from "../../content/table/EmployeeTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
+
 export default {
   name: "mscontent",
   components: {
     MSCombobox,
     EmployeeTable,
-    MSNavigation,
+    MSNavigation
   },
   methods: {
-    sayHi() {
-      alert("Hello");
-    },
+    clickToShowDialog(){
+      this.$parent.$emit('clickToShowDialog');
+    }
   },
   data() {
     return {
+      dialog: false,
       listDepartment: [
         "Tất cả phòng ban",
         "Phòng tài chính",
@@ -780,7 +776,7 @@ export default {
 </script>
 <style scoped>
 .main-content {
-  padding: 24px;
+  padding: 16px 24px;
   height: calc(100% - 60px);
   box-sizing: border-box;
 }
@@ -792,7 +788,7 @@ export default {
   width: 100%;
   display: flex;
   box-sizing: border-box;
-  padding: 8px;
+  align-items: center;
 }
 .main-content .content-header .content-header-text {
   position: absolute;
@@ -800,7 +796,7 @@ export default {
 .main-content .content-header .content-header-button {
   position: absolute;
   right: 24px;
-  line-height: 50px;
+ 
 }
 .btnInsert {
   background-color: #019160;
@@ -833,7 +829,7 @@ export default {
   background-color: transparent;
   box-sizing: border-box;
 }
-.main-content .content-input .input-search:focus {
+.main-content .content-input .input-search input:focus {
   border: 1px solid #2fbebe;
 }
 .main-content .content-input .input-search:hover {
@@ -845,9 +841,10 @@ export default {
   display: flex;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
-  margin-left: 10px;
+  
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .main-content .content-input .input-search .btnSearch {
@@ -862,15 +859,12 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
 }
-.main-content .content-input .input-search .btnSearch:hover {
-  background-color: #d2d2d2;
-  border-radius: 3px;
-}
+
 .main-content .content-input .input-search .search-box input {
-  width: calc(320px - 45px);
+  width: calc(320px - 48px);
   border: 0;
   box-sizing: border-box;
-  height: 43px;
+  height: 41px;
   margin-left: 45px;
   outline: 0;
 }

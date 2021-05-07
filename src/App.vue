@@ -1,7 +1,8 @@
 <template>
    <div class="main-container">
        <BodyLeft></BodyLeft>
-       <BodyRight></BodyRight>
+       <BodyRight @clickToShowDialog="displayDialog()"></BodyRight>
+        <MSDialog v-if="dialog"></MSDialog>
  
    </div>
 </template>
@@ -10,9 +11,21 @@
 
 import BodyLeft  from './components/Body-left.vue';
 import BodyRight  from './components/Body-right.vue';
+import MSDialog from  './content/dialog/dialog.vue';
 export default {
-  components: { BodyLeft, BodyRight },
+  components: { BodyLeft, BodyRight, MSDialog },
   name: 'App',
+  data(){
+      return{
+            dialog : false
+      }
+     
+  },
+  methods:{
+    displayDialog(){
+        this.dialog = true;
+    }
+  }
  
 };
 </script>

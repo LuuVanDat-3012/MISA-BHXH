@@ -34,8 +34,8 @@ export default {
  }      
          .container-cbb select{
              box-sizing: border-box;
-             height: 43px;
-             width: 200px;
+             height: 40px;
+             width: 198px;
              border: 0;
          }
 option{
