@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using MISA.service.Model;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace MISA.service.Controllers
     {
         // GET: api/<DemoReadWriteController>
         [HttpGet]
+        [EnableCors("AnotherPolicy")]
         public ActionServiceResult Get()
         {
             ActionServiceResult aSR = new ActionServiceResult()

@@ -29,7 +29,7 @@
                             <div class="input-code input-common">
                                  <div class="input-title">Mã nhân viên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" name="customerName">
+                                     <input type="text" name="employeeCode" FieldName = "employeeCode" class="imposition">
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
@@ -41,7 +41,7 @@
                             <div class="input-birthday  input-common">
                                 <div class="input-title">Ngày sinh</div>
                                 <div class="input-box">
-                                     <input type="date" name="customerbỉthday" placeholder="đ/MM/yyyy">
+                                     <input type="date" name="customerbỉthday" placeholder="dd/MM/yyyy">
                                  </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                               <div class="input-code input-common">
                                  <div class="input-title">Họ và tên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" name="customerName">
+                                     <input type="text" name="fullName" class="imposition" @keyup="isRight()">
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
@@ -97,7 +97,7 @@
                                                 <div class="input-code-card input-common" >
                                                     <div class="input-title">Số điện thoại <b style="color: red">(*)</b></div>
                                                     <div class="input-box">
-                                                        <input type="text" name="customerCodeCard">
+                                                        <input type="text" name="phoneNumber" class="imposition" @keyup="isRight()">
                                                     </div>
                                                 </div>
                                         </div>
@@ -134,7 +134,7 @@
                                 <div class="btn-cancel">
                                     HUỶ
                                 </div>
-                                <div class="btn-save">
+                                <div class="btn-save" @click="saveEmployee()">
                                     LƯU
                                 </div>
                         </div> 
@@ -146,7 +146,7 @@
   
 </template>
 <script>
-
+import $ from 'jquery'
 export default {
    name: "MSDialog",
    components:{
@@ -164,7 +164,30 @@ export default {
    methods:{
         closeDialog(){
         this.$emit('closeDialogInApp');
+        },
+        saveEmployee(){
+           var fullname = $("[name='fullname']").val();
+        //    var phoneNumber = $("[name='phoneNumber']").val();
+        //    var employeeCode = $("[name='employeeCode']").val();
+          
+
+           
+        },
+        isRight(){
+            var fullname = $("[name='fullname']").val();
+            var phoneNumber = $("[name='phoneNumber']").val();
+            var employeeCode = $("[name='employeeCode']").val();
+            if(fullname == null || phoneNumber == null || employeeCode == null){
+                 $('.input-box .imposition').addClass('noInvalidate');
+                 return false;
+            }
+            
+           
+        },
+        validateData(){
+
         }
+        
    }
   
 }
@@ -173,271 +196,6 @@ export default {
 /*
     làm mờ
 */
-.dialog-model{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color:#ccc;
-    z-index: 9;
-    opacity: 0.6;
-}
-.dialog{
-    width: 900px;
-    height: 700px;
-    background-color: #FFFFFF;
-    z-index: 99999999;
-    position: absolute;
-    top: calc(50% - 410px);
-    left: calc(50% - 435px);
-   
-}
-.dialog-content{
-    display: flex;
-    flex-direction: column ;
-}
-
-/* CSS title of dialog */
-.dialog-title{
-    display: flex;
-    height: 50px;
-}
-.dialog-title-text{
-    font-size: 30px !important;
-    font-weight: bold;
-    padding-top: 24px;
-    padding-left: 24px;
-}
-.btn-close-dialog{
-    width: 24px;
-    height: 24px;
-    background-image: url('../../content/icon/close-button.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: #ccc;
-    position: absolute;
-    right: 0;
-}
-.btn-close-dialog:hover{
-    background-color: #DADCE0;
-    cursor: pointer;
-}
-
-/* CSS for content dialog */
-.content-up{
-    width: 100%;
-    height: 300px;  
-    margin-top: 24px;
-    display: flex;
-}
-    .input-image{
-        width: 300px;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-       .image-icon{
-            width: 300px;
-            height: 200px;
-       }
-       .image-icon div{
-           width: 200px;
-           height: 200px;
-            background-image: url('../../content/image/default-avatar.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            border-radius: 50%;
-            border: 2px solid #ccc;
-            position: absolute;
-            left: 50px;
-       }
-       .image-text{
-            flex: 1; 
-            padding-top: 5px;
-       }
-       .image-text div{
-           width: 200px;
-           height: 30px;
-           text-align: center;
-       }
-       .image-text div b{
-          align-content: center;
-       }
-/* CSS phần input đầu tiên */
-input[type=radio] {
-    border: 0px;
-    width: 100%;
-    height: 2em;
-}
-.input-info-up{
-    flex: 1;
-    display: flex;
-}
-.input-half{
-    width: 288px;
-    height: 300px;
-    padding-right: 30px;
-}
-    .input-common{
-        height: 100px;
-        display: flex;
-        flex-direction: column;
-    }
-        .input-title{
-            width: 100%;
-            height: 30px;
-        }
-        .input-box{
-            flex: 1;
-        }
-        .input-box input{
-            height: 40px;
-            width: 260px;
-            border: 1px solid #d2d2d2;
-            border-radius: 3px;
-            padding-left:8px;
-        }
-        .input-box input:focus{
-            outline: 0;
-            border: 1px solid #019160;
-            border-radius: 3px;
-        }
-        .input-box input:hover{
-            outline: 0;
-            border: 1px solid #019160;
-            border-radius: 3px;
-        }
-         .input-box select{
-            height: 40px;
-            width: 260px;
-            border: 1px solid #d2d2d2;
-            border-radius: 3px;
-            padding-left:8px ;
-        }
-        .radioGender{
-            display: flex;
-            align-content: center;
-            
-        }
-        .radioGender div{
-            width: 95px;
-            height: 40px;
-            display: flex;
-            align-content: center;
-            margin-top: 10px;
-        }
-        .radioGender div label{
-            padding-left: 10px;
-        }
-       
-        .radioGender input{
-            color: #019160;
-            height: 20px;
-            width: 20px;     
-        }
-
-
-        /* CSS INPUT center */
-.input-center{
-    width: 900px;
-    height: 240px;
-    position: absolute;
-    left: 0;
-    top: 360px;
-    display: flex;
-    flex-direction: column;
-}
-.input-center-row{
-    height: 80px;
-    width: 100%;
-    display: flex;
-}
-.input-center-left{
-    width: 588px;
-    height: 100px;
-    padding-left: 24px;
-}
-.input-center-left input{
-    width: 537px;
-    height: 40px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-.input-center-left input:focus{
-     outline: 0;
-     border: 1px solid #019160;
-     border-radius: 3px;
-}
-.input-center-left input:hover{
-     outline: 0;
-     border: 1px solid #019160;
-     border-radius: 3px;
-}
-.input-center-right{
-    margin-left: 25px;
-}
-.box-center-address{
-    width: 844px;
-    height: 40px;
-   
-}
-.box-center-address input{
-    width: 845px;
-    height: 40px;
-    border: 1px solid #d2d2d2;
-    padding-left: 10px;
-    
-}
-.input-center-address{
-    padding-left: 24px;
-}
-
-.box-center-address input:focus{
-     outline: 0;
-     border: 1px solid #019160;
-     border-radius: 3px;
-}
-.box-center-address input:hover{
-     outline: 0;
-     border: 1px solid #019160;
-     border-radius: 3px;
-}
-
-/* FOOTER */
-.dialog-footer{
-    width: 900px;
-    background-color: #e9ebee;
-    height: 70px;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px 29px;
-}
-.btn-cancel{
-    padding: 10px 24px;
-    font-size: 15px;
-    height: 40px;
-}
-.btn-save{
-    padding: 10px 24px;
-    background-color: #019160;
-    font-size: 15px;
-    color: #FFFFFF;
-    height: 40px;
-    align-content: center;
-    text-align: center;
-    line-height: 24px;
-    border-radius: 3px;
-}
-.btn-save:hover{
-    background-color: #2fbebe;
-}
-
+@import url('../../style/root.css');
 
 </style>

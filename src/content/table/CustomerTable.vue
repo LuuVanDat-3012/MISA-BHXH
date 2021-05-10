@@ -10,40 +10,58 @@
                     <th>Số diện thoại</th>
                     <th>Email</th>
                     <th>Nhóm khách hàng</th>
-                    
-                   
-                    <th>Ghi chú</th>
+                    <th>Địa chỉ</th>
+                    <th>Mức lương</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="customer in listCustomer" :key="customer">
-                    <td>{{customer.code}}</td>
-                    <td>{{customer.name}}</td>
-                    <td>{{customer.sex}}</td>
-                    <td>{{customer.birthday}}</td>
-                    <td>{{customer.phone}}</td>
-                    <td>{{customer.email}}</td>
-                    <td>{{customer.customerGroupName}}</td>
-                    <td>{{customer.status}}</td>
+                <tr v-for="employee in listEmployee" :key="employee">
+                    <td>{{employee.EmployeeCode}}</td>
+                    <td>{{employee.FullName}}</td>
+                    <td>{{employee.GenderName}}</td>
+                    <td>{{employee.DateOfBirth}}</td>
+                    <td>{{employee.PhoneNumber}}</td>
+                    <td>{{employee.Email}}</td>
+                    <td>{{employee.customerGroupName}}</td>
+                    <td>{{employee.Address}}</td>
+                    <td>{{employee.Salary}}</td>
                 </tr>
             </tbody>
         
-           
+        
             
         </table>
     </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: "customertable",
-  props:{
-      listCustomer:{
-          typeof: JSON,
-          default: null
-      }
+//   props:{
+//       listCustomer:{
+//           typeof: JSON,
+//           default: null
+//       }
+//   },
+  data(){
+     return{
+         listEmployee: null
+     }
+  },
+  mounted() {
+    
+    axios.get('http://cukcuk.manhnv.net/v1/Employees')
+    .then(response => {
+      this.listEmployee = response.data
+     
+    })
+    .catch(e => {
+      alert(e)
+    })
   }
-}
+  }
+
 </script>
  <style>
  .container-table{

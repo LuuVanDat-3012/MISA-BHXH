@@ -1,5 +1,5 @@
 <template >
-    <div class="container">
+    <div class="header-container">
           <div class="listRes">
                  <select name="" id="">
                      <option value="" v-for="res in listRes" :key="res"> {{res}}</option>
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style>
-.container{
+.header-container{
     display: flex;
     align-items: center;
     border-bottom: 1px solid #d2d2d2;
@@ -60,7 +60,7 @@ export default {
     border: 0;
     width: 150px;
 }
-.container .user{
+.header-container .user{
     display: flex;
     flex-direction: row;
     position: absolute;
@@ -68,7 +68,7 @@ export default {
     align-items: center;
    
 }
-.container .user .icon{
+.header-container .user .icon{
     background-repeat: no-repeat;
     background-position: 25px 7px;
     width: 50px;
@@ -76,15 +76,15 @@ export default {
     background-size: 25px;
     
 }
-.container .user .icon.icon-user{
+.header-container .user .icon.icon-user{
     background-image: url('../../content/icon/avatar-default.png');
     vertical-align: middle;
 }
-.container .user .username{
+.header-container .user .username{
     padding: 0px 12px;
     text-align: center;
 }
-.container .user .moreInfo{
+.header-container .user .moreInfo{
     background-image: url('../../content/icon/option.png');
     vertical-align: middle;
     width: 30px;

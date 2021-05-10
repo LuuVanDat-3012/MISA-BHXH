@@ -35,7 +35,7 @@
       <MSCombobox v-bind:list="this.listPosition"> </MSCombobox>
       <div class="refresh-table"></div>
     </div>
-    <CustomerTable v-bind:listCustomer="this.listCustomer"></CustomerTable>
+    <CustomerTable></CustomerTable>
     <MSNavigation></MSNavigation>
     
   </div>
@@ -71,12 +71,8 @@ export default {
         "Nhân viên kế toán",
         "Nhân viên kinh đoanh",
         "Bảo vệ",
-      ],
-      listCustomer:[
-        {
-        
-        }
       ]
+     
 
      
     };
@@ -210,7 +206,7 @@ export default {
 }
 
 /*t
-    CSS button rếh table          
+    CSS button refresh table          
     */
 .main-content .content-input .refresh-table {
   height: 43px;
