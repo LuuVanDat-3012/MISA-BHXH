@@ -2,7 +2,7 @@
    <div class="main-container">
        <BodyLeft></BodyLeft>
        <BodyRight @clickToShowDialog="displayDialog()"></BodyRight>
-        <MSDialog v-if="dialog"></MSDialog>
+       <MSDialog v-if="dialog"  @closeDialogInApp='closeDialog()'></MSDialog>
  
    </div>
 </template>
@@ -24,6 +24,9 @@ export default {
   methods:{
     displayDialog(){
         this.dialog = true;
+    },
+    closeDialog(){
+        this.dialog = false;
     }
   }
  

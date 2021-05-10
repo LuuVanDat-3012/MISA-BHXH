@@ -3,30 +3,28 @@
         <table>
             <thead>
                 <tr>
-                    <th>Mã nhân viên</th>
+                    <th>Mã khách hàng</th>
                     <th>Họ và tên</th>
                     <th>Giới tính</th>
                     <th>Ngày sinh</th>
                     <th>Số diện thoại</th>
                     <th>Email</th>
-                    <th>Chức vụ</th>
-                    <th>Phòng ban</th>
-                    <th>Mức lương cơ bản</th>
-                    <th>Tình trạng công việc</th>
+                    <th>Nhóm khách hàng</th>
+                    
+                   
+                    <th>Ghi chú</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="employee in listEmployee" :key="employee">
-                    <td>{{employee.code}}</td>
-                    <td>{{employee.name}}</td>
-                    <td>{{employee.sex}}</td>
-                    <td>{{employee.birthday}}</td>
-                    <td>{{employee.phone}}</td>
-                    <td>{{employee.email}}</td>
-                    <td>{{employee.position}}</td>
-                    <td>{{employee.department}}</td>
-                    <td>{{employee.salary}}</td>
-                    <td>{{employee.jobStatus}}</td>
+                <tr v-for="customer in listCustomer" :key="customer">
+                    <td>{{customer.code}}</td>
+                    <td>{{customer.name}}</td>
+                    <td>{{customer.sex}}</td>
+                    <td>{{customer.birthday}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.email}}</td>
+                    <td>{{customer.customerGroupName}}</td>
+                    <td>{{customer.status}}</td>
                 </tr>
             </tbody>
         
@@ -38,9 +36,9 @@
 
 <script>
 export default {
-  name: "employeetable",
+  name: "customertable",
   props:{
-      listEmployee:{
+      listCustomer:{
           typeof: JSON,
           default: null
       }

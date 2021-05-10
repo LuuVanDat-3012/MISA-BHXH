@@ -7,7 +7,7 @@
                  <div class="dialog-title-text">
                       THÔNG TIN KHÁCH HÀNG
                  </div>
-                 <div class="btn-close-dialog">
+                 <div class="btn-close-dialog" @click="closeDialog()">
                      
                  </div>
             </div>
@@ -132,7 +132,7 @@
                          <!-- FOOTER -->
                         <div class="dialog-footer">
                                 <div class="btn-cancel">
-                                    
+                                    HUỶ
                                 </div>
                                 <div class="btn-save">
                                     LƯU
@@ -160,7 +160,13 @@ export default {
            textPhone:"Số điện thoại",
            textTax:"Mã số thuế"
        }
+   },
+   methods:{
+        closeDialog(){
+        this.$emit('closeDialogInApp');
+        }
    }
+  
 }
 </script>
 <style scoped>
@@ -175,7 +181,7 @@ export default {
     bottom: 0;
     background-color:#ccc;
     z-index: 9;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 .dialog{
     width: 900px;
@@ -213,6 +219,10 @@ export default {
     background-color: #ccc;
     position: absolute;
     right: 0;
+}
+.btn-close-dialog:hover{
+    background-color: #DADCE0;
+    cursor: pointer;
 }
 
 /* CSS for content dialog */
@@ -400,12 +410,34 @@ input[type=radio] {
 /* FOOTER */
 .dialog-footer{
     width: 900px;
-    background-color: #E9BEBE;
+    background-color: #e9ebee;
     height: 70px;
     position: absolute;
     bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 29px;
 }
-
+.btn-cancel{
+    padding: 10px 24px;
+    font-size: 15px;
+    height: 40px;
+}
+.btn-save{
+    padding: 10px 24px;
+    background-color: #019160;
+    font-size: 15px;
+    color: #FFFFFF;
+    height: 40px;
+    align-content: center;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 3px;
+}
+.btn-save:hover{
+    background-color: #2fbebe;
+}
 
 
 </style>
