@@ -29,13 +29,13 @@
                             <div class="input-code input-common">
                                  <div class="input-title">Mã nhân viên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" name="employeeCode" FieldName = "employeeCode" class="imposition">
+                                     <input type="text" v-model="EmployeeCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
                                 <div class="input-title">Mã thẻ thành viên</div>
                                  <div class="input-box">
-                                     <input type="text" name="customerCodeCard">
+                                     <input type="text" name="PersonalTaxCode">
                                  </div>
                             </div>
                             <div class="input-birthday  input-common">
@@ -51,7 +51,7 @@
                               <div class="input-code input-common">
                                  <div class="input-title">Họ và tên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" name="fullName" class="imposition" @keyup="isRight()">
+                                     <input type="text" v-model="FullName" name="fullName" class="imposition"  @keydown="isActive = validateData()" :class="{noInvalidate : isActive}">
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
@@ -67,17 +67,17 @@
                             </div>
                             <div class="input-birthday  input-common">
                                 <div class="input-title">Giới tính</div>
-                                <div class="input-box radioGender">
-                                    <div class="male">
-                                        <input type="radio" name="customerGender" value="Nam" id="nam">
+                                <div class="input-box radioGender" >
+                                    <div class="male" >
+                                        <input type="radio" name="customerGender" value="Nam" id="nam" v-model="Gender">
                                         <label for="nam">Nam</label>
                                     </div>
                                      <div class="female">
-                                        <input type="radio" name="customerGender" value="Nữ" id="nu">
+                                        <input type="radio" name="customerGender" value="Nữ" id="nu" v-model="Gender">
                                         <label for="nu">Nữ</label>
                                      </div>
                                      <div class="other">
-                                         <input type="radio" name="customerGender" value="Khác" id="khac">
+                                         <input type="radio" name="customerGender" value="Khác" id="khac" v-model="Gender">
                                         <label for="khac">Khác</label>
                                      </div>
                                  </div>
@@ -90,14 +90,14 @@
                                         <div class="input-center-left">
                                                 <div class="input-title">Email </div>
                                                 <div class="box-center-left">
-                                                    <input type="text" name="customerEmail" placeholder="example@gmail.com">
+                                                    <input type="email" name="customerEmail" placeholder="example@gmail.com" v-model="Email">
                                                 </div>
                                         </div>
                                         <div class="input-center-right">
                                                 <div class="input-code-card input-common" >
                                                     <div class="input-title">Số điện thoại <b style="color: red">(*)</b></div>
                                                     <div class="input-box">
-                                                        <input type="text" name="phoneNumber" class="imposition" @keyup="isRight()">
+                                                        <input type="text" v-model="PhoneNumber" class="imposition" @keydown="isActive = false" :class="{noInvalidate : isActive}">
                                                     </div>
                                                 </div>
                                         </div>
@@ -135,7 +135,7 @@
                                     HUỶ
                                 </div>
                                 <div class="btn-save" @click="saveEmployee()">
-                                    LƯU
+                                   LƯU
                                 </div>
                         </div> 
         </div>   
@@ -146,7 +146,6 @@
   
 </template>
 <script>
-import $ from 'jquery'
 export default {
    name: "MSDialog",
    components:{
@@ -158,36 +157,33 @@ export default {
            textName:"Họ vàn tên",
            textCardCode:"Mã thẻ thành viên",
            textPhone:"Số điện thoại",
-           textTax:"Mã số thuế"
+           textTax:"Mã số thuế",
+           isActive: false,
+           employeeCode: null
        }
    },
+  
    methods:{
+        /**
+         * Hàm đóng dialog khi nhấn button X
+         */
         closeDialog(){
-        this.$emit('closeDialogInApp');
+            this.$emit('closeDialogInApp');
         },
+        /**
+         * Hàm lưu thêm mới khách hàng
+         */
         saveEmployee(){
-           var fullname = $("[name='fullname']").val();
-        //    var phoneNumber = $("[name='phoneNumber']").val();
-        //    var employeeCode = $("[name='employeeCode']").val();
-          
-
-           
-        },
-        isRight(){
-            var fullname = $("[name='fullname']").val();
-            var phoneNumber = $("[name='phoneNumber']").val();
-            var employeeCode = $("[name='employeeCode']").val();
-            if(fullname == null || phoneNumber == null || employeeCode == null){
-                 $('.input-box .imposition').addClass('noInvalidate');
-                 return false;
-            }
-            
-           
+            if(this.employeeCode == null)
+                this.isActive = true;  
+                  
         },
         validateData(){
+            // var numbers = '0123456789';
 
+            return true;
         }
-        
+       
    }
   
 }

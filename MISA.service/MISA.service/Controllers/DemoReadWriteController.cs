@@ -19,30 +19,24 @@ namespace MISA.service.Controllers
         [EnableCors("AnotherPolicy")]
         public ActionServiceResult Get()
         {
-            ActionServiceResult aSR = new ActionServiceResult()
-            {
-                Success = true,
-                Message = "Thanh cong",
-                MISAcode = Enumeration.MISAcode.Success,
-                data = Customer.GetCustomers()
-            };
-            return aSR;
+            
+            return null;
 
         }
 
         // GET api/<DemoReadWriteController>/5
         [HttpGet("{id}")]
-        public ActionServiceResult Get(string id)
-        {
-            ActionServiceResult aSR = new ActionServiceResult()
-            {
-                Success = true,
-                Message = "Thanh cong",
-                MISAcode = Enumeration.MISAcode.Success,
-                data = Customer.GetCustomers().Where(p => p.customerId.Equals(id)).FirstOrDefault()
-            };
-            return aSR;
-        }
+        //public ActionServiceResult Get(string id)
+        //{
+        //    ActionServiceResult aSR = new ActionServiceResult()
+        //    {
+        //        Success = true,
+        //        Message = "Thanh cong",
+        //        MISAcode = Enumeration.MISAcode.Success,
+        //        data = Customer.GetCustomers().Where(p => p.customerId.Equals(id)).FirstOrDefault()
+        //    };
+        //    return aSR;
+        //}
 
         // POST api/<DemoReadWriteController>
         [HttpPost]

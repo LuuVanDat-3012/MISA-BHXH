@@ -9,20 +9,20 @@
                     <th>Ngày sinh</th>
                     <th>Số diện thoại</th>
                     <th>Email</th>
-                    <th>Nhóm khách hàng</th>
+                    <th>Mã thẻ thành viên</th>
                     <th>Địa chỉ</th>
                     <th>Mức lương</th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="employee in listEmployee" :key="employee">
+                <tr v-for="employee in listEmployee" :key="employee.EmployeeCode">
                     <td>{{employee.EmployeeCode}}</td>
                     <td>{{employee.FullName}}</td>
                     <td>{{employee.GenderName}}</td>
                     <td>{{employee.DateOfBirth}}</td>
                     <td>{{employee.PhoneNumber}}</td>
                     <td>{{employee.Email}}</td>
-                    <td>{{employee.customerGroupName}}</td>
+                    <td>{{employee.PersonalTaxCode}}</td>
                     <td>{{employee.Address}}</td>
                     <td>{{employee.Salary}}</td>
                 </tr>
@@ -35,7 +35,11 @@
 </template>
 
 <script>
+
 import axios from 'axios'
+// import common from '../../js/common'
+
+
 export default {
   name: "customertable",
 //   props:{
@@ -49,18 +53,22 @@ export default {
          listEmployee: null
      }
   },
-  mounted() {
-    
+  mounted() {   
     axios.get('http://cukcuk.manhnv.net/v1/Employees')
     .then(response => {
-      this.listEmployee = response.data
-     
+      this.listEmployee = response.data 
     })
     .catch(e => {
       alert(e)
     })
+  },
+  methods:{
+    
   }
-  }
+
+  
+
+}
 
 </script>
  <style>

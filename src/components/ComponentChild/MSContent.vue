@@ -42,7 +42,7 @@
 </template>
 <script>
 import MSCombobox from "../../content/combobox/combobox.vue";
-import CustomerTable from "../../content/table/CustomerTable.vue";
+import CustomerTable from "../../content/table/EmployeeTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
 
 export default {

@@ -8,59 +8,34 @@ namespace MISA.service.Model
     public class Customer
     {
 
-        public Guid customerId { get; set; }
-        public string customerCode { get; set; }
-        public string  fullname { get; set; }
-        public int gender { get; set; }
-        public string  email { get; set; }
-        public DateTime birthday { get; set; }
-        public string address { get; set; }
-        public string customerGroupName { get; set; }
-        public string status { get; set; }
+        public Guid CustomerId { get; set; }
+        public string CustomerCode { get; set; }
+        public string  Fullname { get; set; }
+        public int Gender { get; set; }
+        public DateTime? Birthday { get; set; }
+        public string Phone { get; set; }
+        public string  Email { get; set; }
+        public Guid CustomerGroupId { get; set; }
+        public string Status { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? ModifiedDate { get; set; }
 
-       public static List<Customer> GetCustomers()
-        {
-            List<Customer> customers = new List<Customer>()
-            {
-                new Customer()
-                {
-                    customerId = Guid.NewGuid(),
-                    customerCode = "KH001",
-                    fullname = "Nguyen Van An",
-                    gender = 0,
-                    email = "example@gmail.com",
-                    birthday = DateTime.Now,
-                    address = "Ha Noi",
-                    customerGroupName = "VIP",
-                    status = null
-                },
-                   new Customer()
-                {
-                    customerId = Guid.NewGuid(),
-                    customerCode = "KH002",
-                    fullname = "Nguyen Duc hung",
-                    gender = 1,
-                    email = "example@gmail.com",
-                    birthday = DateTime.Now,
-                    address = "Ha Noi",
-                    customerGroupName = "VIP",
-                    status = null
-                },
-                      new Customer()
-                {
-                    customerId = Guid.NewGuid(),
-                    customerCode = "KH003",
-                    fullname = "Tran Van Do",
-                    gender = 2,
-                    email = "example@gmail.com",
-                    birthday = DateTime.Now,
-                    address = "Ha Noi",
-                    customerGroupName = "VIP",
-                    status = null
-                }
-            };
-            return customers;
-        }
+  //      CustomerId char (36) NOT NULL DEFAULT '',
+  //CustomerCode varchar(55) DEFAULT NULL,
+  //Fullname varchar(255) DEFAULT NULL,
+  //Gender int DEFAULT NULL,
+  //Birthday datetime DEFAULT NULL,
+  //Phone varchar(20) DEFAULT NULL,
+  //Email varchar(100) DEFAULT NULL,
+  //CustomerGroupId char (36) DEFAULT NULL,
+  // Status varchar(255) DEFAULT NULL,
+  // CreatedBy varchar(255) DEFAULT NULL,
+  // CraetdDate datetime DEFAULT NULL,
+  //ModifiedBy varchar(255) DEFAULT NULL,
+  //ModifiedDate datetime DEFAULT NULL,
+       
     }
  
 }

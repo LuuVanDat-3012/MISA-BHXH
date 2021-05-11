@@ -16,7 +16,8 @@
     position: absolute;
     top: calc(50% - 410px);
     left: calc(50% - 435px);
-   
+    animation: animationDialog 0.5s forwards;
+  
 }
 .dialog-content{
     display: flex;
@@ -262,6 +263,7 @@ input[type=radio] {
 }
 .btn-save:hover{
     background-color: #2fbebe;
+    cursor: pointer;
 }
 
 
@@ -272,4 +274,14 @@ input[type=radio] {
     
      border: 1px solid #E20000 !important;
      border-radius: 3px;
+}
+
+
+@-webkit-keyframes animationDialog{
+    from{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1);
+    }
 }

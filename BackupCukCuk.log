@@ -1,0 +1,23 @@
+﻿===========================================
+Log started at 5/11/2021 10:23:35 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=127.0.0.1;Character Set=utf8
+
+Objects included in the script (Tables):
+customer
+customergroup
+
+Objects included in the script (Procedures):
+GetCustomer
+Proc_GetCustomer
+Proc_GetCustomerById
+Tables with data included in the script:
+customergroup (4 rows)
+customer (992 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 5/11/2021 10:23:35 PM
+===========================================
