@@ -5,7 +5,7 @@
         <h2>Danh sách khách hàng</h2>
       </div>
       <div class="content-header-button" @click="clickToShowDialog()">
-        <button class="btnInsert" >
+        <button class="btnInsert">
           <img
             src="../../content/icon/add.png"
             alt=""
@@ -27,7 +27,7 @@
             type="text"
             placeholder="Tìm kiếm theo tên, email... "
             class="text-input"
-          />
+          @keyup.enter = "findByCustomerCode()"/>
         </div>
       </div>
 
@@ -37,12 +37,11 @@
     </div>
     <CustomerTable></CustomerTable>
     <MSNavigation></MSNavigation>
-    
   </div>
 </template>
 <script>
 import MSCombobox from "../../content/combobox/combobox.vue";
-import CustomerTable from "../../content/table/EmployeeTable.vue";
+import CustomerTable from "../../content/table/CustomerTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
 
 export default {
@@ -50,12 +49,12 @@ export default {
   components: {
     MSCombobox,
     CustomerTable,
-    MSNavigation
+    MSNavigation,
   },
   methods: {
-    clickToShowDialog(){
-      this.$parent.$emit('clickToShowDialog');
-    }
+    clickToShowDialog() {
+      this.$emit("clickToShowDialog");
+    },
   },
   data() {
     return {
@@ -71,10 +70,7 @@ export default {
         "Nhân viên kế toán",
         "Nhân viên kinh đoanh",
         "Bảo vệ",
-      ]
-     
-
-     
+      ],
     };
   },
 };
@@ -101,7 +97,6 @@ export default {
 .main-content .content-header .content-header-button {
   position: absolute;
   right: 24px;
- 
 }
 .btnInsert {
   background-color: #019160;
@@ -146,7 +141,7 @@ export default {
   display: flex;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
-  
+
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;

@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using MISA.service.Model;
+using MISA.service.Service;
 using MySqlConnector;
 using System;
 using System.Collections.Generic;
@@ -20,14 +21,37 @@ namespace MISA.service.Controllers
         [HttpGet]
         public ActionServiceResult Get()
         {
-            var connectionString = "Host = 127.0.0.1;" +
+            var connectionString = "Host = localhost;" +
                 "Port = 3306; " +
                 "Database = lvdat_misa_cukcuk;" +
                 "User Id = root;" +
-                "Password = luudet0512ld;" +
+                "Password = lovanmet1;" +
                 "Character Set=utf8";
             var dbConnection = new MySqlConnection(connectionString);
-            var customers = dbConnection.Query<Customer>("select * from customer").ToList();
+            var customers = dbConnection.Query<Customer>("select * from customer limit 20").ToList();
+            var customerDTOs = CustomerMapper.convertListCustomer(customers);
+            return new ActionServiceResult()
+            {
+                Message = "Thanh cong",
+                MISAcode = Enumeration.MISAcode.Success,
+                Success = true,
+                data = customerDTOs
+            };
+        }
+
+        // GET api/<CustomersController>/5
+        [HttpGet("{id}")]
+        public ActionServiceResult Get(string id)
+        {
+            var connectionString = "Host = localhost;" +
+                "Port = 3306; " +
+                "Database = lvdat_misa_cukcuk;" +
+                "User Id = root;" +
+                "Password = lovanmet1;" +
+                "Character Set=utf8";
+            var dbConnection = new MySqlConnection(connectionString);
+            var sqlQuery = $"select * from customer where customerCode = '{id}' ";
+            var customers = dbConnection.Query<Customer>(sqlQuery).FirstOrDefault();
             return new ActionServiceResult()
             {
                 Message = "Thanh cong",
@@ -35,13 +59,6 @@ namespace MISA.service.Controllers
                 Success = true,
                 data = customers
             };
-        }
-
-        // GET api/<CustomersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
         }
 
         // POST api/<CustomersController>

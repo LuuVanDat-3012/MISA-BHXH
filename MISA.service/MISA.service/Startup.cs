@@ -28,7 +28,7 @@ namespace MISA.service
         {
 
             services.AddControllers();
-            //services.AddCors();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.service", Version = "v1" });
@@ -44,7 +44,7 @@ namespace MISA.service
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MISA.service v1"));
             }
-            //app.UseCors(o => o.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
+            app.UseCors(o => o.AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin());
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();

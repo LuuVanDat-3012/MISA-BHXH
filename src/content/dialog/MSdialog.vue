@@ -29,19 +29,19 @@
                             <div class="input-code input-common">
                                  <div class="input-title">Mã nhân viên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" v-model="EmployeeCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
+                                     <input type="text" v-model="CCustomerCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
                                 <div class="input-title">Mã thẻ thành viên</div>
                                  <div class="input-box">
-                                     <input type="text" name="PersonalTaxCode">
+                                     <input type="text" name="CTaxCode" v-model="CMenberCardCode">
                                  </div>
                             </div>
                             <div class="input-birthday  input-common">
                                 <div class="input-title">Ngày sinh</div>
                                 <div class="input-box">
-                                     <input type="date" name="customerbỉthday" placeholder="dd/MM/yyyy">
+                                     <input type="date" name="CBirthday" placeholder="dd/MM/yyyy" v-model="CBirthday">
                                  </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                               <div class="input-code input-common">
                                  <div class="input-title">Họ và tên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" v-model="FullName" name="fullName" class="imposition"  @keydown="isActive = validateData()" :class="{noInvalidate : isActive}">
+                                     <input type="text" v-model="CFullname" name="CFullname" class="imposition"  @keydown="isActive = validateData()" :class="{noInvalidate : isActive}">
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
@@ -69,15 +69,15 @@
                                 <div class="input-title">Giới tính</div>
                                 <div class="input-box radioGender" >
                                     <div class="male" >
-                                        <input type="radio" name="customerGender" value="Nam" id="nam" v-model="Gender">
+                                        <input type="radio" name="customerGender" value="Nam" id="nam" v-model="CGender">
                                         <label for="nam">Nam</label>
                                     </div>
                                      <div class="female">
-                                        <input type="radio" name="customerGender" value="Nữ" id="nu" v-model="Gender">
+                                        <input type="radio" name="customerGender" value="Nữ" id="nu" v-model="CGender">
                                         <label for="nu">Nữ</label>
                                      </div>
                                      <div class="other">
-                                         <input type="radio" name="customerGender" value="Khác" id="khac" v-model="Gender">
+                                         <input type="radio" name="customerGender" value="Khác" id="khac" v-model="CGender">
                                         <label for="khac">Khác</label>
                                      </div>
                                  </div>
@@ -90,14 +90,14 @@
                                         <div class="input-center-left">
                                                 <div class="input-title">Email </div>
                                                 <div class="box-center-left">
-                                                    <input type="email" name="customerEmail" placeholder="example@gmail.com" v-model="Email">
+                                                    <input type="email" name="customerEmail" placeholder="example@gmail.com" v-model="CEmail">
                                                 </div>
                                         </div>
                                         <div class="input-center-right">
                                                 <div class="input-code-card input-common" >
                                                     <div class="input-title">Số điện thoại <b style="color: red">(*)</b></div>
                                                     <div class="input-box">
-                                                        <input type="text" v-model="PhoneNumber" class="imposition" @keydown="isActive = false" :class="{noInvalidate : isActive}">
+                                                        <input type="text" v-model="CPhone" class="imposition" @keydown="isActive = false" :class="{noInvalidate : isActive}">
                                                     </div>
                                                 </div>
                                         </div>
@@ -107,14 +107,14 @@
                                         <div class="input-center-left">
                                                 <div class="input-title">Tên công ty </div>
                                                 <div class="box-center-left">
-                                                    <input type="text" name="customerEmail" >
+                                                    <input type="text" name="CCompany" >
                                                 </div>
                                         </div>
                                         <div class="input-center-right">
                                                 <div class="input-code-card input-common" >
                                                     <div class="input-title">Mã số thuế</div>
                                                     <div class="input-box">
-                                                        <input type="text" name="customerTaxCode" placeholder="Nhập mã số thuế"> 
+                                                        <input type="text" name="CTaxCode" placeholder="Nhập mã số thuế"> 
                                                     </div>
                                                 </div>
                                         </div>
@@ -124,7 +124,7 @@
                                         <div class="input-center-address">
                                                 <div class="input-title">Địa chỉ </div>
                                                 <div class="box-center-address">
-                                                    <input type="text" name="customerAddress" >
+                                                    <input type="text" name="CAddress" v-model="CAddress" >
                                                 </div>
                                         </div>
                                     </div>
@@ -159,16 +159,28 @@ export default {
            textPhone:"Số điện thoại",
            textTax:"Mã số thuế",
            isActive: false,
-           employeeCode: null
+           employeeCode: null,
+           isShow: false,
+           CCustomerCode: '',
+           CEmail: '',
+           CPhone: '',
+           CTaxCode: '',
+           CCompant: '',
+           CGender: '',
+           CAddress: '',
+           CMenberCardCode: '',
+           CFullname: '',
+           CBirthday : ''
+
        }
    },
-  
+    
    methods:{
         /**
          * Hàm đóng dialog khi nhấn button X
          */
         closeDialog(){
-            this.$emit('closeDialogInApp');
+            this.$emit('closeDialog');
         },
         /**
          * Hàm lưu thêm mới khách hàng

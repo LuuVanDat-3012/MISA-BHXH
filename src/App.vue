@@ -2,7 +2,7 @@
    <div class="main-container">
        <BodyLeft></BodyLeft>
        <BodyRight @clickToShowDialog="displayDialog()"></BodyRight>
-       <MSDialog v-if="dialog"  @closeDialogInApp='closeDialog()'></MSDialog>
+     
  
    </div>
 </template>
@@ -11,9 +11,9 @@
 
 import BodyLeft  from './components/Body-left.vue';
 import BodyRight  from './components/Body-right.vue';
-import MSDialog from  './content/dialog/dialog.vue';
+
 export default {
-  components: { BodyLeft, BodyRight, MSDialog },
+  components: { BodyLeft, BodyRight },
   name: 'App',
   data(){
       return{

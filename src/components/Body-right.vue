@@ -1,20 +1,35 @@
 <template>
-  <div class="container-content">
+  <div class="container-content" >
     <MSHeader></MSHeader>
-    <MSContent></MSContent>
+    <MSContent @clickToShowDialog="displayDialog()"></MSContent>
+    <MSDialog @closeDialog="closeDialog()" v-if="isActive"></MSDialog>
   </div>
 </template>
 
 <script>
 import MSHeader from "./ComponentChild/MSHeader.vue";
 import MSContent from "./ComponentChild/MSContent.vue";
+import MSDialog from '../content/dialog/MSdialog.vue';
 export default {
   name: "body-right",
   components: {
     MSHeader,
     MSContent,
+    MSDialog
   },
-  methods: {},
+  data(){
+    return{
+      isActive : false
+    }
+  },
+  methods: {
+    displayDialog(){
+        this.isActive = true;
+    },
+    closeDialog(){
+        this.isActive = false;
+    }
+  },
 };
 </script>
 

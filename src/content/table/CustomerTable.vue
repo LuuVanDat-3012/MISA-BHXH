@@ -8,67 +8,61 @@
                     <th>Giới tính</th>
                     <th>Ngày sinh</th>
                     <th>Số diện thoại</th>
-                    <th>Email</th>
-                    <th>Mã thẻ thành viên</th>
-                    <th>Địa chỉ</th>
-                    <th>Mức lương</th>
+                    <th>Email</th>  
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="employee in listEmployee" :key="employee.EmployeeCode">
-                    <td>{{employee.EmployeeCode}}</td>
-                    <td>{{employee.FullName}}</td>
-                    <td>{{employee.GenderName}}</td>
-                    <td>{{employee.DateOfBirth}}</td>
-                    <td>{{employee.PhoneNumber}}</td>
-                    <td>{{employee.Email}}</td>
-                    <td>{{employee.PersonalTaxCode}}</td>
-                    <td>{{employee.Address}}</td>
-                    <td>{{employee.Salary}}</td>
+                <tr v-for="(customer, index) in listCustomer.data" :key="index"  @dblclick="showDialog()">
+                    <td>{{customer.customerCode}}</td>
+                    <td>{{customer.fullname}}</td>
+                    <td>{{formatGender(customer.gender)}}</td>
+                    <td>{{formatDate(customer.birthday)}}</td>
+                    <td>{{customer.phone}}</td>
+                    <td>{{customer.email}}</td>
                 </tr>
             </tbody>
-        
-        
-            
+      
+       
         </table>
     </div>
 </template>
 
 <script>
-
 import axios from 'axios'
-// import common from '../../js/common'
-
-
+import common from '../../js/common'
 export default {
   name: "customertable",
-//   props:{
-//       listCustomer:{
-//           typeof: JSON,
-//           default: null
-//       }
-//   },
   data(){
      return{
-         listEmployee: null
+         listCustomer: null,
+         
      }
   },
+ 
   mounted() {   
-    axios.get('http://cukcuk.manhnv.net/v1/Employees')
+    axios.get('https://localhost:44333/api/Customers')
     .then(response => {
-      this.listEmployee = response.data 
+      this.listCustomer = response.data;
     })
     .catch(e => {
-      alert(e)
+      alert(e);
     })
   },
+
   methods:{
-    
+    formatDate(val){
+        return common.formatDate(val);
+    },
+    formatGender(val){
+        return common.formatGender(val);
+    },
+    showDialog(){
+        this.$emit("clickToShowDialog");
+    }
   }
-
+ 
   
-
-}
+  }
 
 </script>
  <style>
