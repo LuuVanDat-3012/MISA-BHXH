@@ -2,7 +2,7 @@
   <div class="container-content" >
     <MSHeader></MSHeader>
     <MSContent @clickToShowDialog="displayDialog()"></MSContent>
-    <MSDialog @closeDialog="closeDialog()" v-if="isActive"></MSDialog>
+    <MSDialog @closeDialog="closeDialog()" v-show="isActive" @clickToShowDialog="displayDialog"></MSDialog>
   </div>
 </template>
 

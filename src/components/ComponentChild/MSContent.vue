@@ -27,7 +27,8 @@
             type="text"
             placeholder="Tìm kiếm theo tên, email... "
             class="text-input"
-          @keyup.enter = "findByCustomerCode()"/>
+            @keyup.enter="findByCustomerCode()"
+          />
         </div>
       </div>
 

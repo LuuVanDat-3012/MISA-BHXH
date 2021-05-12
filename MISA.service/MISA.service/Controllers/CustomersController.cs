@@ -21,11 +21,11 @@ namespace MISA.service.Controllers
         [HttpGet]
         public ActionServiceResult Get()
         {
-            var connectionString = "Host = localhost;" +
+            var connectionString = "Host = 127.0.0.1;" +
                 "Port = 3306; " +
                 "Database = lvdat_misa_cukcuk;" +
                 "User Id = root;" +
-                "Password = lovanmet1;" +
+                "Password = luudet0512ld;" +
                 "Character Set=utf8";
             var dbConnection = new MySqlConnection(connectionString);
             var customers = dbConnection.Query<Customer>("select * from customer limit 20").ToList();

@@ -15,5 +15,7 @@ namespace MISA.service.Model
         public string Email { get; set; }
         public Guid CustomerGroupId { get; set; }
         public string Status { get; set; }
+        public string MemberCardCode { get; set; }
+        public string TaxCode { get; set; }
     }
 }

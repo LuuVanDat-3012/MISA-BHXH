@@ -17,6 +17,8 @@ namespace MISA.service.Model
         public string  Email { get; set; }
         public Guid CustomerGroupId { get; set; }
         public string Status { get; set; }
+        public string MemberCardCode { get; set; }
+        public string TaxCode { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
@@ -32,10 +34,11 @@ namespace MISA.service.Model
   //CustomerGroupId char (36) DEFAULT NULL,
   // Status varchar(255) DEFAULT NULL,
   // CreatedBy varchar(255) DEFAULT NULL,
-  // CraetdDate datetime DEFAULT NULL,
+  // CreatedDate datetime DEFAULT NULL,
   //ModifiedBy varchar(255) DEFAULT NULL,
   //ModifiedDate datetime DEFAULT NULL,
-       
+  //TaxCode varchar(255) DEFAULT NULL,
+  //MemberCardCode varchar(255) DEFAULT NULL,
     }
  
 }

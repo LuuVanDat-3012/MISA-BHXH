@@ -1,5 +1,5 @@
 <template>
-<div class="container-dialog">
+<div class="container-dialog" >
      <div class="dialog-model">
     </div>
      <div class="dialog">
@@ -29,7 +29,7 @@
                             <div class="input-code input-common">
                                  <div class="input-title">Mã nhân viên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" v-model="CCustomerCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
+                                     <input type="text" ref="search" v-model="CCustomerCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
@@ -194,8 +194,10 @@ export default {
             // var numbers = '0123456789';
 
             return true;
-        }
-       
+        },     
+   },
+   mounted(){
+      
    }
   
 }
