@@ -25,7 +25,7 @@ namespace MISA.service.Controllers
                 "Port = 3306; " +
                 "Database = lvdat_misa_cukcuk;" +
                 "User Id = root;" +
-                "Password = luudet0512ld;" +
+                "Password = lovanmet1;" +
                 "Character Set=utf8";
             var dbConnection = new MySqlConnection(connectionString);
             var customers = dbConnection.Query<Customer>("select * from customer limit 20").ToList();

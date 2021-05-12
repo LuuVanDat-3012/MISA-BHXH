@@ -21,8 +21,8 @@
         >
           <td :Code="customer.customerCode">{{ customer.customerCode }}</td>
           <td>{{ customer.fullname }}</td>
-          <td>{{ formatGender(customer.gender) }}</td>
-          <td>{{ formatDate(customer.birthday) }}</td>
+          <td>{{ customer.gender | formatGender }}</td>
+          <td>{{ customer.birthday| formatDate }}</td>
           <td>{{ customer.phone }}</td>
           <td>{{ customer.email }}</td>
           <td>{{ customer.memberCardCode }}</td>
@@ -35,7 +35,6 @@
 
 <script>
 import axios from "axios";
-import common from "../../js/common";
 export default {
   name: "customertable",
   data() {
@@ -57,12 +56,7 @@ export default {
   },
 
   methods: {
-    formatDate(val) {
-      return common.formatDate(val);
-    },
-    formatGender(val) {
-      return common.formatGender(val);
-    },
+  
     showDialog() {
       this.$parent.$emit("clickToShowDialog");
     },

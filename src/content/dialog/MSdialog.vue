@@ -29,7 +29,7 @@
                             <div class="input-code input-common">
                                  <div class="input-title">Mã nhân viên <b style="color: red">(*)</b></div>
                                  <div class="input-box">
-                                     <input type="text" ref="search" v-model="CCustomerCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" >
+                                     <input type="text" ref="search" v-model="CCustomerCode" @keydown="isActive = false" class="imposition" :class="{noInvalidate : isActive}" autofocus >
                                  </div>
                             </div>
                             <div class="input-code-card input-common" >
