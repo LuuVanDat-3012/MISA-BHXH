@@ -1,9 +1,9 @@
 <template>
   <div class="container-content">
     <MSHeader></MSHeader>
-    <MSContent @openDialog="displayDialog()"></MSContent>
+    <MSContent @openDialog="displayDialog" @showCustomerInDialog="showInfo"></MSContent>
     <MSDialog v-if="isActive"
-    @closeDialog="closeDialog"></MSDialog>
+    @closeDialog="closeDialog" :customer="customer"></MSDialog>
   </div>
 </template>
  <!-- @closeDialog="closeDialog()"
@@ -24,7 +24,18 @@ export default {
   data() {
     return {
       isActive: false,
-      customer: null
+      customer: {
+        customerCode: '',
+        fullname: '',
+        gender:'',
+        birthday:'',
+        phone:'',
+        email:'',
+        memberCardCode:'',
+        taxCode:'',
+        address:'',
+        company:''
+      }
     };
   },
   methods: {
@@ -37,9 +48,12 @@ export default {
     /**
      * dua du lieu len dialog
      */
-    updateCustomer(val){
-      console.log("Ham update da duoc goij trong BODY RIGHT" +  val.customerCode);  
-    },
+  
+    showInfo(data){
+      this.isActive = true;
+      this.customer = data;
+      console.log(this.customer.birthday);
+    }
   },
 };
 </script>

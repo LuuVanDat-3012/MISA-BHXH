@@ -44,22 +44,21 @@
 import MSCombobox from "../../content/combobox/combobox.vue";
 import CustomerTable from "../../content/table/CustomerTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
-// import Dialog from "../../content/dialog/MSdialog"
 
 export default {
   name: "mscontent",
   components: {
     MSCombobox,
     CustomerTable,
-    MSNavigation,
+    MSNavigation
+   
   },
   methods: {
     clickToShowDialog() {
       this.$emit('openDialog');
-      console.log('ham trong content dc goi');
     },
     updateCustomerInContent(data){
-      console.log("ham trong content da duoc goi : "+ data)
+      console.log("ham trong content da duoc goi : "+ data.fullname)
       this.$emit("showCustomerInDialog", data);
     }
   },

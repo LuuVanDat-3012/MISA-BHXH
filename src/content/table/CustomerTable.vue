@@ -21,10 +21,11 @@
           v-for="(customer, index) in listCustomer"
           :key="index"
           @dblclick="showDialog(customer)"
-          :infoCustomer = customer
+          :infoCustomer="customer.customerCode"
+          :name="customer.fullname"
         >
           <td>
-            <input type="checkbox" value="" class="checkboxRow" />
+            <input type="checkbox" value="" class="checkboxRow"/>
           </td>
           <td>{{ customer.customerCode }}</td>
           <td>{{ customer.fullname }}</td>
@@ -50,9 +51,10 @@
 
 <script>
 import axios from "axios";
-import Dialog from '../dialog/MSdialog.vue'
+
 export default {
   name: "customertable",
+  components: {},
   data() {
     return {
       listCustomer: null,
@@ -73,10 +75,8 @@ export default {
   },
 
   methods: {
-    showDialog() {  
-      var customer = event.currentTarget.getAttribute("infoCustomer");
-      console.log("ham trong table duoc goi")
-      this.$emit('updateCustomerInTable', customer);
+    showDialog(val) {
+      this.$emit("updateCustomerInTable", val);
     },
   },
 };
