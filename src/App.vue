@@ -1,7 +1,7 @@
 <template>
    <div class="main-container">
        <BodyLeft></BodyLeft>
-       <BodyRight @clickToShowDialog="displayDialog()"></BodyRight>
+       <BodyRight></BodyRight>
      
  
    </div>
@@ -17,17 +17,12 @@ export default {
   name: 'App',
   data(){
       return{
-            dialog : false
+          
       }
      
   },
   methods:{
-    displayDialog(){
-        this.dialog = true;
-    },
-    closeDialog(){
-        this.dialog = false;
-    }
+  
   }
  
 };

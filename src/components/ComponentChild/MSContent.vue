@@ -4,7 +4,7 @@
       <div class="content-header-text">
         <h2>Danh sách khách hàng</h2>
       </div>
-      <div class="content-header-button" @click="clickToShowDialog()">
+      <div class="content-header-button" @click="clickToShowDialog()" ref="btnInsert">
         <button class="btnInsert">
           <img
             src="../../content/icon/add.png"
@@ -36,7 +36,7 @@
       <MSCombobox v-bind:list="this.listPosition"> </MSCombobox>
       <div class="refresh-table"></div>
     </div>
-    <CustomerTable></CustomerTable>
+    <CustomerTable @updateCustomerInTable="updateCustomerInContent"></CustomerTable>
     <MSNavigation></MSNavigation>
   </div>
 </template>
@@ -44,6 +44,7 @@
 import MSCombobox from "../../content/combobox/combobox.vue";
 import CustomerTable from "../../content/table/CustomerTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
+import Dialog from "../../content/dialog/MSdialog"
 
 export default {
   name: "mscontent",
@@ -54,8 +55,13 @@ export default {
   },
   methods: {
     clickToShowDialog() {
-      this.$emit("clickToShowDialog");
+      Dialog.methods.openDialog();
+      console.log('ham trong content dc goi');
     },
+    updateCustomerInContent(data){
+      console.log("ham trong content da duoc goi : "+ data)
+      this.$emit("showCustomerInDialog", data);
+    }
   },
   data() {
     return {
@@ -74,6 +80,7 @@ export default {
       ],
     };
   },
+ 
 };
 </script>
 <style scoped>

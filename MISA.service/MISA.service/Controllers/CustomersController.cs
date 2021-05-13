@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using MISA.service.Data;
 using MISA.service.Model;
 using MISA.service.Service;
 using MySqlConnector;
@@ -17,41 +18,26 @@ namespace MISA.service.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
+        
         // GET: api/<CustomersController>
         [HttpGet]
-        public ActionServiceResult Get()
+        public List<CustomerDTO> Get()
         {
-            var connectionString = "Host = 127.0.0.1;" +
-                "Port = 3306; " +
-                "Database = lvdat_misa_cukcuk;" +
-                "User Id = root;" +
-                "Password = lovanmet1;" +
-                "Character Set=utf8";
-            var dbConnection = new MySqlConnection(connectionString);
-            var customers = dbConnection.Query<Customer>("select * from customer limit 20").ToList();
+            
+            
+            var dbConnector = new DatabaseConnector<Customer>();
+            var customers = dbConnector.GetAll().ToList();
             var customerDTOs = CustomerMapper.convertListCustomer(customers);
-            return new ActionServiceResult()
-            {
-                Message = "Thanh cong",
-                MISAcode = Enumeration.MISAcode.Success,
-                Success = true,
-                data = customerDTOs
-            };
+            return customerDTOs;
         }
 
         // GET api/<CustomersController>/5
         [HttpGet("{id}")]
         public ActionServiceResult Get(string id)
         {
-            var connectionString = "Host = localhost;" +
-                "Port = 3306; " +
-                "Database = lvdat_misa_cukcuk;" +
-                "User Id = root;" +
-                "Password = lovanmet1;" +
-                "Character Set=utf8";
-            var dbConnection = new MySqlConnection(connectionString);
+          
             var sqlQuery = $"select * from customer where customerCode = '{id}' ";
-            var customers = dbConnection.Query<Customer>(sqlQuery).FirstOrDefault();
+            var customers = DAL.GetConnection().Query<Customer>(sqlQuery).ToList();
             return new ActionServiceResult()
             {
                 Message = "Thanh cong",
@@ -63,8 +49,15 @@ namespace MISA.service.Controllers
 
         // POST api/<CustomersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public int Post([FromBody] Customer customer)
         {
+            var sqlQuery = $"INSERT INTO customer(CustomerId, CustomerCode, Fullname, Phone) VALUES(" +
+                $"'{Guid.NewGuid().ToString()}'," +
+                $"'{customer.CustomerCode.ToString()}'," +
+                $"'{customer.Fullname.ToString()}'," +
+                $"'{customer.Phone.ToString()}')";
+            DAL.GetConnection().Execute(sqlQuery);
+            return 1;
         }
 
         // PUT api/<CustomersController>/5

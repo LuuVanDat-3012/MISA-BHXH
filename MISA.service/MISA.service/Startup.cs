@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MISA.service.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,7 @@ namespace MISA.service
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MISA.service", Version = "v1" });
             });
+            //DatabaseConnector.connectionString = Configuration.GetConnectionString("lvdatConnectionString");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

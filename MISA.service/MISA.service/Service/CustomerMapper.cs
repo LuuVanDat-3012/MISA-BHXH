@@ -25,7 +25,10 @@ namespace MISA.service.Service
             }
             return customerDTOs;
         }
-       
-       
+
+        internal static object convertListCustomer(IEnumerable<Customer> customers)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
