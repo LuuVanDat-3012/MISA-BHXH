@@ -44,7 +44,7 @@
 import MSCombobox from "../../content/combobox/combobox.vue";
 import CustomerTable from "../../content/table/CustomerTable.vue";
 import MSNavigation from "../../content/navigation/navigation.vue";
-import Dialog from "../../content/dialog/MSdialog"
+// import Dialog from "../../content/dialog/MSdialog"
 
 export default {
   name: "mscontent",
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     clickToShowDialog() {
-      Dialog.methods.openDialog();
+      this.$emit('openDialog');
       console.log('ham trong content dc goi');
     },
     updateCustomerInContent(data){
@@ -149,7 +149,6 @@ export default {
   display: flex;
   border: 1px solid #d2d2d2;
   border-radius: 4px;
-
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;

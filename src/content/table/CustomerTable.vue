@@ -20,7 +20,7 @@
         <tr
           v-for="(customer, index) in listCustomer"
           :key="index"
-          @dblclick="showDialog()"
+          @dblclick="showDialog(customer)"
           :infoCustomer = customer
         >
           <td>
@@ -50,6 +50,7 @@
 
 <script>
 import axios from "axios";
+import Dialog from '../dialog/MSdialog.vue'
 export default {
   name: "customertable",
   data() {

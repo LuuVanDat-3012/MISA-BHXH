@@ -1,10 +1,9 @@
 <template>
   <div class="container-content">
     <MSHeader></MSHeader>
-    <MSContent ></MSContent>
-    <MSDialog
-     
-    ></MSDialog>
+    <MSContent @openDialog="displayDialog()"></MSContent>
+    <MSDialog v-if="isActive"
+    @closeDialog="closeDialog"></MSDialog>
   </div>
 </template>
  <!-- @closeDialog="closeDialog()"

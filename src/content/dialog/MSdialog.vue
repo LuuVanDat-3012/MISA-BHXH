@@ -1,5 +1,5 @@
 <template>
-  <div class="container-dialog" v-if="isShow">
+  <div class="container-dialog">
     <div class="dialog-model"></div>
     <div class="dialog">
       <div class="dialog-title">
@@ -26,10 +26,7 @@
                   <input
                     type="text"
                     ref="search"
-                    
-                    
-                    class="imposition"
-                   
+                    class="imposition"        
                   />
                 </div>
               </div>
@@ -42,8 +39,7 @@
                     type="text"
                    
                     name="CFullname"
-                    class="imposition"
-                
+                    class="imposition"     
                   />
                 </div>
               </div>
@@ -186,7 +182,7 @@
         </div>
         <!-- FOOTER -->
         <div class="dialog-footer">
-          <div class="btn-cancel">HUỶ</div>
+          <div class="btn-cancel" @click="closeDialog">HUỶ</div>
           <div class="btn-save" @click="saveEmployee()">LƯU</div>
         </div>
       </div>
@@ -205,7 +201,7 @@ export default {
       textPhone: "Số điện thoại",
       textTax: "Mã số thuế",
       employeeCode: null,
-      isShow: false,
+     
     };
   },
 
