@@ -283,3 +283,10 @@ input[type="radio"] {
   height: 300px;
   
 }
+
+/**
+Định dạng datetime
+*/
+.customerBirthday{
+  width: 260px;
+}

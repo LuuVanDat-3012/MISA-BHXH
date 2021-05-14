@@ -12,4 +12,9 @@ Vue.filter('formatGender', function (val) {
       if(val==1) return 'Nữ';
       return 'Khác';
 })
+Vue.filter('frontEndDateFormat', function (date) {
+    return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+})
+
+
  

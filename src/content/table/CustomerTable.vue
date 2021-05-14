@@ -50,7 +50,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "customertable",
@@ -64,14 +63,19 @@ export default {
   },
 
   mounted() {
-    axios
-      .get("https://localhost:44333/api/Customers")
-      .then((response) => {
+    // axios
+    //   .get("https://localhost:44333/api/Customers")
+    //   .then((response) => {
+    //     this.listCustomer = response.data;
+    //   })
+    //   .catch((e) => {
+    //     alert(e);
+    //   });
+    this.axios('/api/Customers')
+    .then((response) => {
+        console.log(response);
         this.listCustomer = response.data;
       })
-      .catch((e) => {
-        alert(e);
-      });
   },
 
   methods: {

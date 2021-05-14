@@ -433,19 +433,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dat\\.nuget\\packages\\": {}
+    "C:\\Users\\lvdat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dat\\Documents\\CukCuk\\MISA-BHXH\\MISA.service\\MISA.service\\MISA.service.csproj",
+      "projectUniqueName": "C:\\Users\\lvdat\\Documents\\MISA-BHXH\\MISA.service\\MISA.service\\MISA.service.csproj",
       "projectName": "MISA.service",
-      "projectPath": "C:\\Users\\Dat\\Documents\\CukCuk\\MISA-BHXH\\MISA.service\\MISA.service\\MISA.service.csproj",
-      "packagesPath": "C:\\Users\\Dat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dat\\Documents\\CukCuk\\MISA-BHXH\\MISA.service\\MISA.service\\obj\\",
+      "projectPath": "C:\\Users\\lvdat\\Documents\\MISA-BHXH\\MISA.service\\MISA.service\\MISA.service.csproj",
+      "packagesPath": "C:\\Users\\lvdat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lvdat\\Documents\\MISA-BHXH\\MISA.service\\MISA.service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lvdat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -506,7 +506,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

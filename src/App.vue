@@ -15,9 +15,13 @@ import BodyRight  from './components/Body-right.vue';
 export default {
   components: { BodyLeft, BodyRight },
   name: 'App',
+  /**
+   * 
+   * Created
+   */
   data(){
       return{
-          
+          empoyee: '' // 
       }
      
   },

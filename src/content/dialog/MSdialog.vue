@@ -23,7 +23,12 @@
                   Mã nhân viên <b style="color: red">(*)</b>
                 </div>
                 <div class="input-box">
-                  <input type="text" ref="search" class="imposition"  v-model="customer.customerCode"/>
+                  <input
+                    type="text"
+                    ref="search"
+                    class="imposition"
+                    v-model="customer.customerCode"
+                  />
                 </div>
               </div>
               <div class="input-code input-common">
@@ -31,7 +36,12 @@
                   Họ và tên <b style="color: red">(*)</b>
                 </div>
                 <div class="input-box">
-                  <input type="text" name="CFullname" class="imposition"  v-model="customer.fullname"/>
+                  <input
+                    type="text"
+                    name="CFullname"
+                    class="imposition"
+                    v-model="customer.fullname"
+                  />
                 </div>
               </div>
             </div>
@@ -40,7 +50,11 @@
               <div class="input-code-card input-common">
                 <div class="input-title">Mã thẻ thành viên</div>
                 <div class="input-box">
-                  <input type="text" name="memberCardCode"  v-model="customer.memberCardCode"/>
+                  <input
+                    type="text"
+                    name="memberCardCode"
+                    v-model="customer.memberCardCode"
+                  />
                 </div>
               </div>
               <div class="input-code-card input-common">
@@ -62,7 +76,7 @@
                   <input
                     type="date"
                     name="CBirthday"
-                    placeholder="dd/MM/yyyy"
+                    
                     v-model="customer.birthday"
                   />
                 </div>
@@ -74,7 +88,7 @@
                     <input
                       type="radio"
                       name="customerGender"
-                      value= 0
+                      value="0"
                       id="nam"
                       v-model="customer.gender"
                     />
@@ -84,7 +98,7 @@
                     <input
                       type="radio"
                       name="customerGender"
-                      value= 1
+                      value="1"
                       id="nu"
                       v-model="customer.gender"
                     />
@@ -94,9 +108,9 @@
                     <input
                       type="radio"
                       name="customerGender"
-                      value= 2
+                      value="2"
                       id="khac"
-                       v-model="customer.gender"
+                      v-model="customer.gender"
                     />
                     <label for="khac">Khác</label>
                   </div>
@@ -125,7 +139,11 @@
                   Số điện thoại <b style="color: red">(*)</b>
                 </div>
                 <div class="input-box">
-                  <input type="text" class="imposition" v-model="customer.phone" />
+                  <input
+                    type="text"
+                    class="imposition"
+                    v-model="customer.phone"
+                  />
                 </div>
               </div>
             </div>
@@ -135,7 +153,7 @@
             <div class="input-center-left">
               <div class="input-title">Tên công ty</div>
               <div class="box-center-left">
-                <input type="text" name="CCompany" v-model="customer.company"/>
+                <input type="text" name="CCompany" v-model="customer.company" />
               </div>
             </div>
             <div class="input-center-right">
@@ -157,7 +175,7 @@
             <div class="input-center-address">
               <div class="input-title">Địa chỉ</div>
               <div class="box-center-address">
-                <input type="text" name="CAddress" v-model="customer.address"/>
+                <input type="text" name="CAddress" v-model="customer.address" />
               </div>
             </div>
           </div>
@@ -172,9 +190,12 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "MSDialog",
-  components: {},
+  components: {
+  
+  },
   data() {
     return {
       textCode: "Mã khách hàng (*)",
@@ -184,6 +205,7 @@ export default {
       textTax: "Mã số thuế",
       employeeCode: null,
       isShow: false,
+      dateOfBirth : null
     };
   },
 
@@ -191,10 +213,6 @@ export default {
     /**
      * Ham mở dialog
      */
-    openDialog() {
-      this.isShow = true;
-      console.log("ham trong dialog dc goi");
-    },
     /**
      * Hàm đóng dialog khi nhấn button X
      */
@@ -225,6 +243,7 @@ export default {
       default: null,
     },
   },
+  
 };
 </script>
 <style scoped>
