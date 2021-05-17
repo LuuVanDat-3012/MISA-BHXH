@@ -19,7 +19,6 @@ namespace MISA.service.Model
         public string Status { get; set; }
         public string MemberCardCode { get; set; }
         public string TaxCode { get; set; }
-        
         public string Address { get; set; }
         public string Company { get; set; }
 

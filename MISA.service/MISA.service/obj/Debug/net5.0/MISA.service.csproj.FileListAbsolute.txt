@@ -91,3 +91,7 @@ C:\Users\Dat\Documents\CukCuk\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5
 C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\MySqlConnector.dll
 C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\Dat\Documents\CukCuk\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\MISA.ApplicationCore.dll
+C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\MISA.Infrastructure.dll
+C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\MISA.ApplicationCore.pdb
+C:\Users\lvdat\Documents\MISA-BHXH\MISA.service\MISA.service\bin\Debug\net5.0\MISA.Infrastructure.pdb

@@ -17,16 +17,16 @@ export default {
   name: 'App',
   /**
    * 
-   * Created
-   */
+   * Created */
+   
   data(){
       return{
-          empoyee: '' // 
+          empoyee: ''
       }
      
   },
   methods:{
-  
+  //
   }
  
 };

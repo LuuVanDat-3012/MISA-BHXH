@@ -53,8 +53,7 @@ export default {
     font-size: 18px;
     border: 0;
     width: 150px;
-    vertical-align: middle;
-    
+    vertical-align: middle;    
 }
 .listRes select{
     border: 0;
@@ -65,16 +64,14 @@ export default {
     flex-direction: row;
     position: absolute;
     right: 16px;
-    align-items: center;
-   
+    align-items: center;  
 }
 .header-container .user .icon{
     background-repeat: no-repeat;
     background-position: 25px 7px;
     width: 50px;
     height: 40px;
-    background-size: 25px;
-    
+    background-size: 25px;   
 }
 .header-container .user .icon.icon-user{
     background-image: url('../../content/icon/avatar-default.png');
@@ -90,8 +87,7 @@ export default {
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
-    background-position: center;
-    
+    background-position: center;   
 }
 
 </style>

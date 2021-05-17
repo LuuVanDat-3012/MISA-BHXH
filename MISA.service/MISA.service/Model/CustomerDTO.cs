@@ -7,7 +7,7 @@ namespace MISA.service.Model
 {
     public class CustomerDTO
     {
-
+        public Guid CustomerId { get; set; }
         public string CustomerCode { get; set; }
         public string Fullname { get; set; }
         public int Gender { get; set; }

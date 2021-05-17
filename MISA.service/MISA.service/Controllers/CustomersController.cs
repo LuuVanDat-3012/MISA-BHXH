@@ -21,29 +21,39 @@ namespace MISA.service.Controllers
         
         // GET: api/<CustomersController>
         [HttpGet]
-        public List<CustomerDTO> Get()
+        public List<Customer> Get()
         {
-            
-            
-            var dbConnector = new DatabaseConnector<Customer>();
-            var customers = dbConnector.GetAll().ToList();
-            var customerDTOs = CustomerMapper.convertListCustomer(customers);
-            return customerDTOs;
+            List<Customer> customers = new List<Customer>();
+            string connectionString = "Host = localhost; Port = 3306;Database = lvdat_misa_cukcuk; User Id = root ;Password = lovanmet1;Character Set=utf8";
+            using (IDbConnection db = new MySqlConnection(connectionString))
+            {
+                //Lấy dữ liệu
+                customers = db.Query<Customer>("Select * From Customer").ToList();
+            }
+            return customers;
         }
 
         // GET api/<CustomersController>/5
         [HttpGet("{id}")]
-        public ActionServiceResult Get(string id)
+        public ActionServiceResult Get(Guid id)
         {
-          
-            var sqlQuery = $"select * from customer where customerCode = '{id}' ";
-            var customers = DAL.GetConnection().Query<Customer>(sqlQuery).ToList();
+
+            Customer customer = new Customer();
+            string connectionString = "Host = localhost; Port = 3306;Database = lvdat_misa_cukcuk; User Id = root ;Password = lovanmet1;Character Set=utf8";
+            
+            using (IDbConnection db = new MySqlConnection(connectionString))
+            {
+                //Lấy dữ liệu
+                var sql = $"Select * From Customer where customerId = {id.ToString()}";
+                customer = db.Query<Customer>(sql).FirstOrDefault();
+            }
+         
             return new ActionServiceResult()
             {
                 Message = "Thanh cong",
                 MISAcode = Enumeration.MISAcode.Success,
                 Success = true,
-                data = customers
+                data = customer
             };
         }
 
